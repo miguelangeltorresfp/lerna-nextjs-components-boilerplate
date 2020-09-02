@@ -1,0 +1,39 @@
+{
+  "name": "@codersforchange/components",
+  "version": "0.0.0",
+  "description": "React.js material-ui library",
+  "author": "Miguel Angel Torres FP <miguelangeltorresfp@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "start-storybook -p 3000 -s ../../assets --ci",
+    "build-storybook": "build-storybook",
+    "build": "yarn run clean && yarn run compile",
+    "clean": "rimraf -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "yarn run build",
+    "test": "yarn run build"
+  },
+  "peerDependencies": {
+    "react": "~16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@storybook/addon-actions": "^6.0.20",
+    "@storybook/addon-essentials": "^6.0.20",
+    "@storybook/addon-links": "^6.0.20",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^6.0.20",
+    "babel-loader": "^8.1.0",
+    "react-is": "^16.13.1",
+    "typescript": "~3.4.5",
+    "rimraf": "~3.0.2",
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "mdi-material-ui": "^6.18.0",
+    "prop-types": "latest",
+    "styled-components": "^5.1.1"
+  },
+  "dependencies": {}
+}

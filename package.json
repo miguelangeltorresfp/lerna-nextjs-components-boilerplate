@@ -1,0 +1,30 @@
+{
+  "name": "root",
+  "repository": "",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/expo",
+      "**/expo/**"
+    ]
+  },
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "dev:app": "lerna run dev --scope=@codersforchange/nextjs",
+    "dev:components": "lerna  run dev --scope=@codersforchange/components",
+    "test": "lerna run test --since",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff",
+    "clean": "lerna run clean",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "typescript": "~3.9.6"
+  }
+}
