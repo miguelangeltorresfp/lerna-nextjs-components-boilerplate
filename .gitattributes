@@ -1,0 +1,3 @@
+# Copied from material-ui: https://github.com/mui-org/material-ui/blob/master/.gitattributes
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto eol=lf

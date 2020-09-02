@@ -1,14 +1,42 @@
 {
-  "extends": "./tsconfig.build.json",
-
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@codersforchange/*": ["packages/*/src"]
-    },
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "declaration": true,
+    "declarationMap": false,
+    "esModuleInterop": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "esModuleInterop": true,
+    "importHelpers": true,
+    "isolatedModules": false,
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noLib": false,
+    "noEmit": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": []
-  }
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strict": true,
+    "target": "esnext"
+  },
+  "exclude": [
+    "node_modules",
+    "packages/**/__tests__",
+    "packages/**/node_modules",
+    "packages/**/jest.setup.ts"
+  ],
+  "include": ["packages/**/*"]
 }

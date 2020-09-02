@@ -1,0 +1,19 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+src/registerServiceWorker.js
+src/**/__tests__/**
+.vscode
+src/generated
+yarn.lock
+package-lock.json
+public
+.vercel/
+build/
+dist/
+pkg/
+public/
+
+# CUSTOM
+.backup
+.notes

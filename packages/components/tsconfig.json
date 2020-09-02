@@ -1,3 +1,19 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "paths": {
+      "definitions/*": ["definitions/*"],
+      "hooks/*": ["hooks/*"],
+      "lib/*": ["lib/*"],
+      "logger": ["logger.ts"],
+      "sass/*": ["sass/*"],
+      "storybook/*": [".storybook/*"],
+      "utils/*": ["utils/*"]
+    },
+    "outDir": "./dist"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
 }

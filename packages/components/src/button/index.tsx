@@ -1,5 +1,3 @@
-// packages/components/lib/button/index.js
-
 import React from 'react';
 
 export const Button = ({ onClick, children }) => {

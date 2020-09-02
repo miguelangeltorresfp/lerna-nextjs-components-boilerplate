@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Button onClick={() => console.log('button clicked!')}>Click me</Button>
+      <Button onClick={() => console.log('button clicked!')}>Click me!</Button>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
