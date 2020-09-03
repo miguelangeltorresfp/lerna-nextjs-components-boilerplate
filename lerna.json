@@ -1,6 +1,15 @@
 {
-  "version": "independent",
+  "command": {
+    "publish": {
+      "ignoreChanges": ["*.md"],
+      "message": "🚀 RELEASE: (chore) publish",
+      "registry": "https://npm.pkg.github.com"
+    }
+  },
   "npmClient": "yarn",
+  "packages": ["packages/*"],
+  "parallel": true,
+  "stream": true,
   "useWorkspaces": true,
-  "stream": true
+  "version": "independent"
 }

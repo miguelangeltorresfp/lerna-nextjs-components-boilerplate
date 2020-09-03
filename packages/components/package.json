@@ -11,10 +11,41 @@
   "esmodule": "dist/index.modern.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "dev": "microbundle watch --jsx React.createElement"
+    "pre:bundle": "rm -rf ./dist",
+    "bundle": "microbundle --jsx React.createElement",
+    "bundle:dev": "yarn bundle -w",
+    "predev": "cross-env NODE_ENV=development",
+    "dev": "start-storybook -p 3000 -s ../../assets --ci",
+    "dev:docs": "yarn dev --docs",
+    "pretest": "cross-env NODE_ENV=test",
+    "test": "jest --detectOpenHandles --passWithNoTests",
+    "prebuild": "cross-env NODE_ENV=production",
+    "prebuild:canvas": "rm -rf ./build",
+    "build": "run-s build:**",
+    "build:canvas": "build-storybook -o build",
+    "build:docs": "build-storybook -o build/docs --docs",
+    "postbuild:canvas": "cp -R ../../assets build",
+    "postbuild:docs": "cp -R ../../assets build/docs",
+    "prestart": "cross-env NODE_ENV=production",
+    "start": "start-storybook -p 3000 -s ../../assets --ci",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
+  "dependencies": {},
   "devDependencies": {
-    "microbundle": "^0.12.3"
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/react": "^6.0.21",
+    "microbundle": "^0.12.3",
+    "react-is": "^16.13.1"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "react": "^16.13.1",
+    "react-dom": "16.13.1",
+    "typescript": "^3.9.3"
   }
 }

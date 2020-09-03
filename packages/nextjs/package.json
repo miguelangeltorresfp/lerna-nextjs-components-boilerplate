@@ -1,19 +1,25 @@
 {
-  "name": "nextjs",
+  "name": "@codersforchange/nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "predev": "cross-env NODE_ENV=development",
+    "dev": "next -p 3001",
     "build": "next build",
-    "start": "next start"
+    "export": "next export",
+    "prestart": "cross-env NODE_ENV=production yarn build && lerna run bundle",
+    "start": "next start -p 3001"
   },
   "dependencies": {
     "@codersforchange/components": "*",
-    "next": "9.5.3",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "next": "9.5.3"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "16.13.1",
+    "cross-env": "^7.0.2",
+    "typescript": "^3.9.3",
     "@types/react": "^16.9.49"
   }
 }

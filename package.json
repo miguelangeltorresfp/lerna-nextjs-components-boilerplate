@@ -6,10 +6,41 @@
       "packages/*"
     ]
   },
+  "scripts": {
+    "reset:vercel": "rm -rf .vercel",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "formatlint": "run-s format lint",
+    "bundle:dev": "lerna run bundle:dev --scope @codersforchange/components",
+    "lerna:dev": "lerna run dev",
+    "predev": "run-s format",
+    "dev": "run-p bundle:dev lerna:dev",
+    "dev:components": "lerna run dev --scope @codersforchange/components",
+    "lerna:devapp": "lerna run dev --scope @codersforchange/nextjs",
+    "dev:app": "run-p bundle:dev lerna:devapp",
+    "build": "lerna run build",
+    "build:components": "lerna run build --scope @codersforchange/components",
+    "build:app": "lerna run build --scope @codersforchange/nextjs",
+    "bundle": "lerna run bundle",
+    "prestart": "cross-env NODE_ENV=production",
+    "start": "lerna run start",
+    "prestage": "yarn reset:vercel",
+    "stage": "vc",
+    "stage:components": "yarn stage -A vercel.json",
+    "stage:app": "yarn stage -A config/app.vercel.json"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "16.13.1"
+  },
   "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@types/react": "^16.9.49",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
     "babel-eslint": "10.x",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "6.x",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-react-app": "^5.2.1",
@@ -20,9 +51,7 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "2.x",
     "lerna": "^3.22.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.1.1"
-  },
-  "scripts": {
-    "dev": "lerna run dev --parallel --stream"
   }
 }
