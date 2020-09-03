@@ -11,6 +11,7 @@
   "esmodule": "dist/index.modern.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "type-check": "tsc --pretty --noEmit",
     "pre:bundle": "rm -rf ./dist",
     "bundle": "microbundle --jsx React.createElement",
     "bundle:dev": "yarn bundle -w",

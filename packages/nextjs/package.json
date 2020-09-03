@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "type-check": "tsc --pretty --noEmit",
     "predev": "cross-env NODE_ENV=development",
     "dev": "next -p 3001",
     "build": "next build",
