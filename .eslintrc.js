@@ -26,7 +26,7 @@ module.exports = {
     '@typescript-eslint/no-object-literal-type-assertion': 'off',
     // Rules to use Eslint with Next.js
     // https://dev.to/arpit73/eslint-and-prettier-for-react-apps-bonus-next-js-and-typescript-3e46
-    'react/react-in-jsx-scope': 'off',
+    'react/react-in-jsx-scope': 'error',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
